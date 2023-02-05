@@ -1,0 +1,39 @@
+spring:
+  #  mvc:
+  #    view:
+  #      prefix: /WEB-INF/views
+  #      suffix: .jsp
+  #    static-path-pattern: /resources/**
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+    jdbc-url: jdbc:mysql://localhost:3306/oauth?serverTimezone=UTC&characterEncoding=UTF-8
+  devtools:
+    livereload:
+      enabled: true
+  freemarker:
+    cache: false
+  thymeleaf:
+    cache: false
+  sql:
+    init:
+      platform: mysql
+
+devtools:
+  livereload:
+    enabled: true
+
+mybatis:
+  type-aliases-package: com.jaeygun.oauth.dto.**
+  mapper-locations: mapper/**/*.xml
+
+login:
+  naver:
+    responseType: code
+    baseUrl: https://nid.naver.com/oauth2.0
+    redirectUrl: http://localhost:8080/oauth/login
+    clientId: fdddAek4STA9o4B8_33W
+    clientSecret: qqMxGOlxir
+  google:
+  kakao:
